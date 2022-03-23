@@ -19,20 +19,12 @@ Route::group([
 
     Route::post('sendPasswordResetLink', 'ResetPasswordController@sendEmail');
     Route::post('resetPassword', 'ChangePasswordController@process');
-    Route::get('allQR', 'QrCodesController@makeAll');
     Route::resource('assets', 'AssetController');
-    Route::get('category', 'AssetController@category');
-    Route::get('depreciation', 'AssetController@depreciation');
-    Route::get('asset_report', 'AssetController@assetReport');
-    Route::post('audit', 'AssetController@audit');
-    Route::post('search', 'AssetController@search');
-    Route::post('history', 'AssetController@history');
-    Route::get('allAudits', 'AssetController@allAudits');
-
-//    Depreciation start
-    Route::post('categoryDpn', 'AssetController@categoryRevaluation');
-    Route::post('additions', 'AssetController@additions');
-    Route::post('revaluations', 'AssetController@revaluations');
-//    Depreciation end
+    Route::resource('supplier', 'SupplierController');
+    Route::resource('equipment', 'EquipmentController');
+    Route::resource('crop', 'CropController');
+    Route::resource('process', 'ProcessController');
+    Route::resource('input', 'InputController');
+    Route::resource('field', 'FieldController');
 
 });

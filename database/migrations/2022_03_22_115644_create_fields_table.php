@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRevaluationsTable extends Migration
+class CreateFieldsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateRevaluationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('revaluations', function (Blueprint $table) {
+        Schema::create('fields', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('asset_number')->nullable();
-            $table->string('value')->nullable();
-            $table->string('by')->nullable();
             $table->timestamps();
+            $table->string ('name')-> nullable();
+            $table->string ('type')-> nullable();
+
         });
     }
 
@@ -29,6 +29,6 @@ class CreateRevaluationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('revaluations');
+        Schema::dropIfExists('fields');
     }
 }

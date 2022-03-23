@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDepreciationsTable extends Migration
+class CreateSuppliersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,16 @@ class CreateDepreciationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('depreciations', function (Blueprint $table) {
+        Schema::create('suppliers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('asset')->nullable();
-            $table->string('asset_number')->nullable();
-            $table->string('depreciation');
             $table->timestamps();
+            $table->string ('name')-> nullable();
+            $table->string ('type')-> nullable();
+            $table->string ('address')-> nullable();
+            $table->string ('contact')-> nullable();
+            $table->string ('ID')-> nullable();
+
+
         });
     }
 
@@ -29,6 +33,6 @@ class CreateDepreciationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('depreciations');
+        Schema::dropIfExists('suppliers');
     }
 }
