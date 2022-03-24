@@ -26,5 +26,6 @@ Route::group([
     Route::resource('process', 'ProcessController');
     Route::resource('input', 'InputController');
     Route::resource('field', 'FieldController');
+    Route::resource('activity', 'ActivityController');
 
 });
